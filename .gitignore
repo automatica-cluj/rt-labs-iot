@@ -1,0 +1,34 @@
+# OS
+.DS_Store
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Java build output
+target/
+
+# MQTT lock files
+*.lck
+
+# Drawio backups
+.$*.bkp
+
+# Arduino build output
+build/
+*.bin
+*.elf
+*.map
+.arduino-user/
+
+# Wi-Fi credentials never go into git. Each sketch folder has a secrets.h
+# created from secrets.h.example.
+secrets.h
+
+# Python
+.venv/
+__pycache__/
+
+# Run logs
+*.log

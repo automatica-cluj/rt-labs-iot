@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #f0f2f5;
+    color: #333;
+}
+
+header {
+    background: #1a1a2e;
+    color: white;
+    padding: 20px 30px;
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+header .subtitle {
+    color: #8888aa;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px 16px;
+    background: white;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #666;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#devices-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+.placeholder {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #999;
+    padding: 60px 20px;
+    font-size: 16px;
+}
+
+/* Device Card */
+.device-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.device-card .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.device-card .mac-address {
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a2e;
+}
+
+.device-card .ip-address {
+    font-family: monospace;
+    font-size: 13px;
+    color: #888;
+}
+
+.device-card .last-seen {
+    font-size: 12px;
+    color: #aaa;
+}
+
+/* Online / offline status */
+.device-card.offline {
+    opacity: 0.55;
+}
+
+.device-card .card-status {
+    text-align: right;
+}
+
+.status-badge {
+    display: inline-block;
+    margin-bottom: 4px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.status-badge.online {
+    background: #e6f4ea;
+    color: #1e7e34;
+}
+
+.status-badge.offline {
+    background: #eee;
+    color: #777;
+}
+
+/* Sensor Readings Grid */
+.readings {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.reading {
+    padding: 8px 12px;
+    background: #f8f9fa;
+    border-radius: 6px;
+}
+
+.reading .label {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #888;
+    letter-spacing: 0.5px;
+}
+
+.reading .value {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 2px;
+}
+
+/* RSSI color coding */
+.rssi-good { color: #22c55e; }
+.rssi-medium { color: #f59e0b; }
+.rssi-weak { color: #ef4444; }
+
+/* LED Controls */
+.led-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding-top: 12px;
+    border-top: 1px solid #eee;
+}
+
+.led-controls .led-label {
+    font-size: 13px;
+    color: #666;
+    margin-right: auto;
+}
+
+.led-controls .led-status {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.led-status.on {
+    background: #22c55e;
+    box-shadow: 0 0 6px #22c55e;
+}
+
+.led-status.off {
+    background: #ccc;
+}
+
+.led-btn {
+    padding: 6px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.led-btn.on-btn {
+    background: #22c55e;
+    color: white;
+}
+
+.led-btn.on-btn:hover {
+    background: #16a34a;
+}
+
+.led-btn.off-btn {
+    background: #e5e7eb;
+    color: #333;
+}
+
+.led-btn.off-btn:hover {
+    background: #d1d5db;
+}
+
+.led-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

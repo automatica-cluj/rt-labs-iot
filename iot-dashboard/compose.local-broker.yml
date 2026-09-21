@@ -1,0 +1,24 @@
+# Adds a local Mosquitto broker and points the dashboard at it.
+#
+#   docker compose -f compose.yml -f compose.local-broker.yml up --build
+#
+# The board must use the same broker: in its secrets.h set MQTT_HOST to the IP
+# address of this computer on the Wi-Fi network (not "localhost") and
+# MQTT_PORT to 1883.
+
+services:
+  mosquitto:
+    image: eclipse-mosquitto:2
+    container_name: iot-mosquitto
+    ports:
+      - "1883:1883"
+    volumes:
+      - ./mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+
+  app:
+    environment:
+      MQTT_BROKER: mosquitto
+      MQTT_PORT: 1883
+    depends_on:
+      mosquitto:
+        condition: service_started

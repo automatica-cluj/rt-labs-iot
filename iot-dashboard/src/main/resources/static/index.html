@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>IoT Device Dashboard</h1>
+        <p class="subtitle">ESP32 MQTT Monitor</p>
+    </header>
+
+    <main>
+        <div id="status-bar">
+            <span id="device-count">0 devices</span>
+            <span id="last-refresh">Refreshing...</span>
+        </div>
+
+        <div id="firmware-section">
+            <h3>Firmware</h3>
+            <div id="firmware-info">No firmware uploaded</div>
+            <div class="firmware-upload">
+                <input type="file" id="firmware-file" accept=".bin">
+                <button onclick="uploadFirmware()">Upload</button>
+            </div>
+        </div>
+
+        <div id="devices-grid">
+            <p class="placeholder">Waiting for devices to connect...</p>
+        </div>
+    </main>
+
+    <script src="/js/app.js"></script>
+</body>
+</html>

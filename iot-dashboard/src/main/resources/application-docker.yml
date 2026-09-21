@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://postgres:5432/iotdb
+    driver-class-name: org.postgresql.Driver
+    username: iotdb
+    password: iotdb
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  h2:
+    console:
+      enabled: false
